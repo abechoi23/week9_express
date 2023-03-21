@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h1>Home</h1>
+
+<h2>Hello <%= user.username %></h2>
+<!-- Display the user's email and favorite color -->
+<p><%= user.email %></p>
+<p>Favorite Color: <%= user.favoriteColor %></p>
+
+<h2>Your Posts</h2>
+
+<% for (const post of user.posts) { %>
+<div class="card">
+  <p><%= post.body %></p>
+</div>
+<% } %>
+
+<!-- Display the items in the user's cart -->
+
+<h3>Your Cart Items</h3>
+<% for (const cart of user.cart) { %>
+<div class="cart">
+  <p><%= cart.name %></p>
+  <p><%= cart.description %></p>
+</div>
+<% } %> <%- include('../partials/footer.ejs') %>
